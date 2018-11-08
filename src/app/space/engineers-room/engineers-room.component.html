@@ -1,3 +1,4 @@
+<p>Aktualna liczba rakiet w hangarze: <strong>{{shipsCount | async}}</strong></p>
 <h3>Budowanie rakiet</h3>
 <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
 
@@ -22,7 +23,11 @@
 
         <div class="control-group">
             <p *ngIf="isProducing">Trwa produkcja...</p>
-            <button type="submit" [disabled]="form.invalid || isProduced">Produkuj</button>
+            <span *ngIf="isProducing" class="spinner rotate"></span>
+        </div>
+
+        <div class="control-group">
+            <button *ngIf="!isProducing" type="submit" [disabled]="form.invalid || isProduced">Produkuj</button>
         </div>
     
 </form>
