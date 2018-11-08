@@ -1,10 +1,12 @@
+import { BlackHoleComponent } from './black-hole/black-hole.component';
 import { SpaceModule } from './space/space.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: 'space', loadChildren: () => SpaceModule },
-  {path: '', redirectTo: 'space', pathMatch: 'full'}
+  {path: '', redirectTo: 'space', pathMatch: 'full'},
+  {path: '**', component: BlackHoleComponent }
 ];
 
 @NgModule({
