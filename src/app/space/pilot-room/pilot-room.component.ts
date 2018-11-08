@@ -1,3 +1,4 @@
+import { PilotService } from './../pilot.service';
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Pilot } from '../pilot';
 
@@ -13,11 +14,13 @@ export class PilotRoomComponent implements OnInit {
 
   @Output() selected = new EventEmitter<Pilot>();
 
-  constructor() { }
+  constructor(private pilotService: PilotService) { }
 
   ngOnInit() {
-    this.pilots.push(new Pilot('Elon Musk', '/assets/elon_musk.png'));
-    this.pilots.push(new Pilot('Marcin Gładkowski'));
+    this.pilotService.getPilots().subscribe({
+      next: (pilots) => this.pilots = pilots,
+      error: () => alert('Nie udało się pobrać pilotów')
+    });
   }
 
   select(pilot: Pilot): void {

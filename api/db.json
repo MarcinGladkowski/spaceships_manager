@@ -4,13 +4,13 @@
         "id": 1,
         "firstName": "Lee",
         "lastName": "Adama",
-        "imageUrl": "/assets/adama.png"
+        "imageUrl": "/assets/elon_musk.png"
       },
       {
         "id": 2,
         "firstName": "Sharon",
         "lastName": "Valerii",
-        "imageUrl": "/assets/valerii.png"
+        "imageUrl": "/assets/astronaut.png"
       },
       {
         "id": 3,
