@@ -1,3 +1,4 @@
+import { DestructionFormValue } from './destruction-form-value';
 import { SpaceShipType } from './space-ship-type.enum';
 import { Injectable } from '@angular/core';
 import { OrderFormValue } from './order-form-value';
@@ -5,7 +6,7 @@ import { Observable, BehaviorSubject, interval } from 'rxjs';
 import { SpaceShip } from './space-ship';
 import { FighterShip } from './fighter-ship';
 import { BomberShip } from './bomber-ship';
-import { map, take, tap } from 'rxjs/operators';
+import { map, take, tap, filter } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class SpaceShipService {
     take(formValues.shipCount),
     tap((spaceShip) => this.hangarShips.next([...this.hangarShips.getValue(), spaceShip]))
     );
+  }
+
+  removeShip(destructionformValue: DestructionFormValue) {
+    // @TODO Exercise 13 this.hangarShips.pipe();
   }
 }
