@@ -7,7 +7,12 @@
             </app-space-ship>
         </div>
         <div class="col-6">
-            <app-pilot-room (selected)="selectedPilot = $event"></app-pilot-room>
+                <div class="row">
+                    <app-pilot-room (selected)="selectedPilot = $event"></app-pilot-room>
+                </div>
+                <div class="row">
+                    <app-engineers-room></app-engineers-room>
+                </div>
         </div>
     </div>
 </div>

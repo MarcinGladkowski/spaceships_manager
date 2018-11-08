@@ -17,7 +17,6 @@ export class Pilot {
 
     set fullName(value: string) {
         const values = value.split(' ');
-        this.firstName = values[0];
-        this.lastName = values[1];
+        [this.firstName, this.lastName] = values;
     }
 }
