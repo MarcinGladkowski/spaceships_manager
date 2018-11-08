@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HangarComponent } from './hangar/hangar.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', component: HangarComponent, pathMatch: 'full'}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
