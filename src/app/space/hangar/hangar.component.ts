@@ -1,8 +1,6 @@
 import { PilotRoomComponent } from './../pilot-room/pilot-room.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SpaceShip } from '../space-ship';
-import { BomberShip } from '../bomber-ship';
-import { FighterShip } from '../fighter-ship';
 import { Pilot } from '../pilot';
 
 @Component({
@@ -20,8 +18,7 @@ export class HangarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.spaceShips.push(new BomberShip());
-    this.spaceShips.push(new FighterShip());
+
   }
 
   deassignPilot(spaceShip: SpaceShip) {

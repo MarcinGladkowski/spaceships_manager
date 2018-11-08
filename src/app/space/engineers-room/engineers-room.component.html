@@ -1,3 +1,4 @@
+<h3>Budowanie rakiet</h3>
 <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
 
         <div class="control-group">
@@ -20,10 +21,10 @@
         </div>
 
         <div class="control-group">
-            <button type="submit" [disabled]="form.invalid">Produkuj</button>
-            <pre>INVALID: {{ form.invalid }}</pre>
+            <p *ngIf="isProducing">Trwa produkcja...</p>
+            <button type="submit" [disabled]="form.invalid || isProduced">Produkuj</button>
         </div>
-        
+    
 </form>
 
 

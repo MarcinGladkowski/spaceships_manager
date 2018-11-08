@@ -1,6 +1,10 @@
+import { Pilot } from './../pilot';
 import { OrderFormValue } from './../order-form-value';
 import { SpaceShipType } from './../space-ship-type.enum';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { OutgoingMessage } from 'http';
+import { SpaceShipService } from '../space-ship.service';
+import { SpaceShip } from '../space-ship';
 
 interface ShipType {
   label: string;
@@ -19,13 +23,26 @@ export class EngineersRoomComponent implements OnInit {
     {label: 'Bombowiec', value: SpaceShipType.Bomber}
   ];
 
-  constructor() { }
+  private isProducing: boolean;
+
+  @Output() shipProduced = new EventEmitter<SpaceShip>();
+
+  constructor(private spaceShipService: SpaceShipService) { }
 
   ngOnInit() {
   }
 
   onSubmit(formValue: OrderFormValue) {
-    console.log(formValue);
+    this.orderSpaceShips(formValue);
+  }
+
+  orderSpaceShips(formValues: OrderFormValue) {
+    this.isProducing = true;
+    this.spaceShipService.produceShips(formValues)
+        .subscribe({
+          next: (ship) => this.shipProduced.emit(ship),
+          complete: () => this.isProducing = false
+        });
   }
 
 }
