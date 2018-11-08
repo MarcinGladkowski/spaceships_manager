@@ -2,7 +2,6 @@ import { Pilot } from './../pilot';
 import { OrderFormValue } from './../order-form-value';
 import { SpaceShipType } from './../space-ship-type.enum';
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
-import { OutgoingMessage } from 'http';
 import { SpaceShipService } from '../space-ship.service';
 import { SpaceShip } from '../space-ship';
 import { map } from 'rxjs/operators';
