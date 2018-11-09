@@ -12,17 +12,21 @@ import { EngineersRoomComponent } from './engineers-room/engineers-room.componen
 import { SpaceShipService } from './space-ship.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PilotService } from './pilot.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PilotFormComponent } from './pilot-form/pilot-form.component';
 
 @NgModule({
-  declarations: [HangarComponent, SpaceShipComponent, PilotComponent, PilotRoomComponent, EngineersRoomComponent],
+  declarations: [HangarComponent, SpaceShipComponent, PilotComponent, PilotRoomComponent, EngineersRoomComponent, PilotFormComponent],
   imports: [
     CommonModule,
     SpaceRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   exports: [
-    HangarComponent
+    HangarComponent,
+    ReactiveFormsModule
   ],
   providers: [
     SpaceShipService,
@@ -30,3 +34,4 @@ import { PilotService } from './pilot.service';
   ]
 })
 export class SpaceModule { }
+

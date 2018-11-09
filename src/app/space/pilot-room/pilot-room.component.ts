@@ -1,4 +1,4 @@
-import { PilotService } from './../pilot.service';
+import { PilotService } from '../pilot.service';
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Pilot } from '../pilot';
 

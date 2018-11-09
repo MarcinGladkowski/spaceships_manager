@@ -8,9 +8,7 @@ import { FighterShip } from './fighter-ship';
 import { BomberShip } from './bomber-ship';
 import { map, take, tap, filter } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SpaceShipService {
 
   static shipProductionTime = 2000;
