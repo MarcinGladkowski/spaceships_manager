@@ -14,9 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PilotService } from './pilot.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PilotFormComponent } from './pilot-form/pilot-form.component';
+import { DestructionRoomComponent } from './destruction-room/destruction-room.component';
 
 @NgModule({
-  declarations: [HangarComponent, SpaceShipComponent, PilotComponent, PilotRoomComponent, EngineersRoomComponent, PilotFormComponent],
+  declarations: [HangarComponent, SpaceShipComponent, PilotComponent, PilotRoomComponent, EngineersRoomComponent, PilotFormComponent, DestructionRoomComponent],
   imports: [
     CommonModule,
     SpaceRoutingModule,

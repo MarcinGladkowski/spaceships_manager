@@ -8,7 +8,9 @@ import { FighterShip } from './fighter-ship';
 import { BomberShip } from './bomber-ship';
 import { map, take, tap, filter } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SpaceShipService {
 
   static shipProductionTime = 2000;
@@ -26,7 +28,9 @@ export class SpaceShipService {
     );
   }
 
-  removeShip(destructionformValue: DestructionFormValue) {
-    // @TODO Exercise 13 this.hangarShips.pipe();
+  removeShip(formValues: DestructionFormValue) {
+    const ships = [...this.hangarShips.getValue()];
+    ships.splice(formValues.shipIndex, 1);
+    this.hangarShips.next(ships);
   }
 }
