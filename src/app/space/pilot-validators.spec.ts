@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { ajax } from 'rxjs/ajax';
 import { of } from 'rxjs';
 
-fdescribe('PilotValidators', () => {
+describe('PilotValidators', () => {
 
     describe('pilotName', () => {
           describe('when value is empty', () => {

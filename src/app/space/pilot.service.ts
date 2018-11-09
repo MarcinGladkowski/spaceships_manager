@@ -22,7 +22,8 @@ export class PilotService {
   }
 
   savePilot(pilotAttrs: PilotAttrs) {
-    return this.updatePilot(pilotAttrs);
+    if (pilotAttrs.id) { return this.updatePilot(pilotAttrs); }
+    return this.createPilot(pilotAttrs);
   }
 
   private createPilot(data: PilotAttrs): Observable<Pilot> {
