@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path: 'space', loadChildren: () => SpaceModule },
   {path: '', redirectTo: 'space', pathMatch: 'full'},
+  {path: 'intel', loadChildren: 'src/app/intel/intel.module#IntelModule'},
   {path: '**', component: BlackHoleComponent }
 ];
 
