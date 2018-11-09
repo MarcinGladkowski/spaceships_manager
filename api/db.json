@@ -1,22 +1,33 @@
 {
-    "pilots": [
-      {
-        "id": 1,
-        "firstName": "Lee",
-        "lastName": "Adama",
-        "imageUrl": "/assets/elon_musk.png"
-      },
-      {
-        "id": 2,
-        "firstName": "Sharon",
-        "lastName": "Valerii",
-        "imageUrl": "/assets/astronaut.png"
-      },
-      {
-        "id": 3,
-        "firstName": "Karl",
-        "lastName": "Ahathon",
-        "imageUrl": null
-      }
-    ]
-  }
+  "pilots": [
+    {
+      "id": 1,
+      "firstName": "Lee2",
+      "lastName": "Adama",
+      "imageUrl": "/assets/elon_musk.png"
+    },
+    {
+      "id": 2,
+      "firstName": "Sharon",
+      "lastName": "Valerii",
+      "imageUrl": "/assets/astronaut.png"
+    },
+    {
+      "id": 3,
+      "firstName": "Karl",
+      "lastName": "Ahathon",
+      "imageUrl": null
+    }
+  ],
+  "forbidden-names": [
+    {
+      "name": "Maruda"
+    },
+    {
+      "name": "Ciamajda"
+    },
+    {
+      "name": "Gapcio"
+    }
+  ]
+}

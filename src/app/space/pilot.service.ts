@@ -20,4 +20,20 @@ export class PilotService {
       map((pilotAttrs) => new Pilot(pilotAttrs))
     );
   }
+
+  savePilot(pilotAttrs: PilotAttrs) {
+    return this.updatePilot(pilotAttrs);
+  }
+
+  private createPilot(data: PilotAttrs): Observable<Pilot> {
+    return this.http.post(`/api/pilots`, data).pipe(
+      map((pilotAttrs) => new Pilot(pilotAttrs))
+    );
+  }
+
+  private updatePilot(data: PilotAttrs): Observable<Pilot> {
+    return this.http.put(`/api/pilots/${data.id}`, data).pipe(
+      map((pilotAttrs) => new Pilot(pilotAttrs))
+    );
+  }
 }
