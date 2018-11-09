@@ -17,7 +17,13 @@ import { PilotFormComponent } from './pilot-form/pilot-form.component';
 import { DestructionRoomComponent } from './destruction-room/destruction-room.component';
 
 @NgModule({
-  declarations: [HangarComponent, SpaceShipComponent, PilotComponent, PilotRoomComponent, EngineersRoomComponent, PilotFormComponent, DestructionRoomComponent],
+  declarations: [
+    HangarComponent,
+    SpaceShipComponent,
+    PilotComponent, PilotRoomComponent,
+    EngineersRoomComponent,
+    PilotFormComponent,
+    DestructionRoomComponent],
   imports: [
     CommonModule,
     SpaceRoutingModule,
@@ -30,8 +36,6 @@ import { DestructionRoomComponent } from './destruction-room/destruction-room.co
     ReactiveFormsModule
   ],
   providers: [
-    SpaceShipService,
-    PilotService
   ]
 })
 export class SpaceModule { }

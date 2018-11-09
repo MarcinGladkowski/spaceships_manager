@@ -11,14 +11,12 @@ export class DestructionGuard implements CanActivate {
   constructor(private spaceShipService: SpaceShipService,
     private router: Router) {}
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
       const hasSpaceShips = this.spaceShipService.hangarShips.getValue().length > 0;
       if (!hasSpaceShips) {
         alert('Nie ma statków w hangarze!');
         this.router.navigateByUrl('/');
       }
       return hasSpaceShips;
-  }
+    }
 }
