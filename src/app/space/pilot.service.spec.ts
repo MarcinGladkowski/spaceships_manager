@@ -1,3 +1,4 @@
+import { HttpClientMock } from './../tests/HttpClientMock';
 import { PilotAttrs } from './pilot-attrs';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
@@ -63,10 +64,3 @@ describe('PilotService', () => {
     });
 
 });
-
-
-export class HttpClientMock extends HttpClient {
-  constructor() {
-    super(null);
-  }
-}

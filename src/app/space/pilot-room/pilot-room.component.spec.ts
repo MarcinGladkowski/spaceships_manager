@@ -1,3 +1,4 @@
+import { PilotMockComponent } from './../pilot/pilot.mock.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PilotRoomComponent } from './pilot-room.component';
 import { Component, Input } from '@angular/core';
@@ -6,20 +7,7 @@ import { PilotService } from '../pilot.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
-// @TODO move to another file
-@Component({
-  selector: 'app-pilot',
-  template: 'pilot {{pilot.firstName}} <ng-content></ng-content>'
-})
-class PilotMockComponent {
-  @Input() pilot: Pilot;
-}
-// @TODO move to another file
-class PilotServiceMock extends PilotService {
-  constructor() {
-    super(null);
-  }
-}
+import { PilotServiceMock } from 'src/app/tests/PilotServiceMock';
 
 describe('PilotRoomComponent', () => {
   let component: PilotRoomComponent;

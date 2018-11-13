@@ -3,13 +3,12 @@ import { FighterShip } from './fighter-ship';
 import { SpaceShipType } from './space-ship-type.enum';
 import { HttpClient } from '@angular/common/http';
 import { SpaceShipService } from './space-ship.service';
-import { HttpClientMock } from './pilot.service.spec';
 import { OrderFormValue } from './order-form-value';
 import { map } from 'rxjs/operators';
 import { SpaceShip } from './space-ship';
+import { HttpClientMock } from '../tests/HttpClientMock';
 
-
-fdescribe('SpaceShipService', () => {
+describe('SpaceShipService', () => {
 
   let spaceShipService: SpaceShipService;
   let http: HttpClient;
