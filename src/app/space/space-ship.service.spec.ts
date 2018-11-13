@@ -1,3 +1,4 @@
+import { DestructionFormValue } from './destruction-form-value';
 import { FighterShip } from './fighter-ship';
 import { SpaceShipType } from './space-ship-type.enum';
 import { HttpClient } from '@angular/common/http';
@@ -18,12 +19,12 @@ fdescribe('SpaceShipService', () => {
     spaceShipService = new SpaceShipService();
   });
 
-  describe('produceShips', () => {
+  beforeEach(() => {
+    const orderFormValue: OrderFormValue = {shipCount: 2, shipType: SpaceShipType.Fighter};
+    spaceShipService.produceShips(orderFormValue);
+  });
 
-    beforeEach(() => {
-        const orderFormValue: OrderFormValue = {shipCount: 2, shipType: SpaceShipType.Fighter};
-        spaceShipService.produceShips(orderFormValue);
-    });
+  describe('produceShips', () => {
 
     it('should hangar has one ship', () => {
       spaceShipService.hangarShips.pipe(map((ships) =>
@@ -41,6 +42,19 @@ fdescribe('SpaceShipService', () => {
 
   });
 
+  describe('removeShips', () => {
 
+    beforeEach(() => {
+      const removeFormValue: DestructionFormValue = {shipIndex: 0};
+      spaceShipService.removeShip(removeFormValue);
+    });
 
+    it('should hangar has not ship', () => {
+      spaceShipService.hangarShips.pipe(map((ships) =>
+         expect(ships.length).toEqual(0)
+        )
+      );
+    });
+
+  });
 });
