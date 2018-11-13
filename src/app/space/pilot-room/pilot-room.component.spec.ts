@@ -21,7 +21,7 @@ class PilotServiceMock extends PilotService {
   }
 }
 
-fdescribe('PilotRoomComponent', () => {
+describe('PilotRoomComponent', () => {
   let component: PilotRoomComponent;
   let fixture: ComponentFixture<PilotRoomComponent>;
   let pilotService: PilotService;
